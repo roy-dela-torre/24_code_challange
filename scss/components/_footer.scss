@@ -1,0 +1,82 @@
+// ============================================
+// Footer Component
+// ============================================
+
+.footer {
+  background-color: $color-primary;
+  color: $color-white;
+  padding: $spacing-xxl 0 $spacing-lg;
+  margin-top: $spacing-xxxl;
+  
+  &__container {
+    @include container;
+  }
+  
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+    margin-bottom: $spacing-xl;
+    
+    @include breakpoint(medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include breakpoint(large) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  &__column {
+    &-title {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-semibold;
+      margin-bottom: $spacing-md;
+      color: $color-white;
+    }
+  }
+  
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+  
+  &__link {
+    color: rgba($color-white, 0.8);
+    @include transition(color $transition-fast);
+    
+    &:hover {
+      color: $color-white;
+    }
+  }
+  
+  &__social {
+    display: flex;
+    gap: $spacing-md;
+    margin-top: $spacing-md;
+  }
+  
+  &__social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba($color-white, 0.1);
+    @include flex-center;
+    color: $color-white;
+    @include transition(all $transition-base);
+    
+    &:hover {
+      background-color: rgba($color-white, 0.2);
+      transform: translateY(-2px);
+    }
+  }
+  
+  &__bottom {
+    padding-top: $spacing-lg;
+    border-top: 1px solid rgba($color-white, 0.2);
+    text-align: center;
+    color: rgba($color-white, 0.7);
+    font-size: $font-size-sm;
+  }
+}

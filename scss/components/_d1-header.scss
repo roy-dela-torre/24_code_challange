@@ -1,0 +1,65 @@
+// ============================================
+// D1 Header Component
+// ============================================
+
+.d1-header {
+  background-color: $color-white;
+  border-bottom: 1px solid #E5E7EB;
+  position: sticky;
+  top: 0;
+  z-index: $z-index-sticky;
+  padding: 1rem 0;
+  
+  &__container {
+    @include container;
+    @include flex-between;
+    align-items: center;
+  }
+  
+  &__logo {
+    .d1-logo {
+      font-size: 2rem;
+      font-weight: 900;
+      color: $color-primary;
+      font-family: 'Poppins', sans-serif;
+      letter-spacing: -0.02em;
+    }
+  }
+  
+  &__nav {
+    display: none;
+    gap: 2.5rem;
+    
+    @include breakpoint(large) {
+      display: flex;
+    }
+  }
+  
+  &__link {
+    color: $color-primary;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    @include transition(color $transition-fast);
+    
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+  
+  &__actions {
+    @include flex-center;
+    gap: 1rem;
+  }
+  
+  &__menu-btn {
+    @include button-reset;
+    font-size: 1.5rem;
+    color: $color-primary;
+    
+    @include breakpoint(large) {
+      display: none;
+    }
+  }
+}

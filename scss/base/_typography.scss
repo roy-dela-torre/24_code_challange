@@ -1,0 +1,60 @@
+// ============================================
+// Typography
+// ============================================
+
+.heading-1 {
+  font-size: 2.5rem;
+  font-weight: $font-weight-bold;
+  
+  @include breakpoint(medium) {
+    font-size: 3rem;
+  }
+  
+  @include breakpoint(large) {
+    font-size: 3.5rem;
+  }
+}
+
+.heading-2 {
+  font-size: 2rem;
+  font-weight: $font-weight-semibold;
+  
+  @include breakpoint(medium) {
+    font-size: 2.5rem;
+  }
+}
+
+.heading-3 {
+  font-size: 1.5rem;
+  font-weight: $font-weight-semibold;
+  
+  @include breakpoint(medium) {
+    font-size: 1.75rem;
+  }
+}
+
+.heading-4 {
+  font-size: 1.25rem;
+  font-weight: $font-weight-medium;
+}
+
+.text-large {
+  font-size: $font-size-lg;
+}
+
+.text-small {
+  font-size: $font-size-sm;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-bold {
+  font-weight: $font-weight-bold;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

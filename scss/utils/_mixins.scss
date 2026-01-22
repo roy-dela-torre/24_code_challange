@@ -1,0 +1,138 @@
+// ============================================
+// Mixins
+// ============================================
+
+// Responsive breakpoint mixin
+@mixin breakpoint($size) {
+  @if $size == small {
+    @media (min-width: $breakpoint-small) { @content; }
+  } @else if $size == medium {
+    @media (min-width: $breakpoint-medium) { @content; }
+  } @else if $size == large {
+    @media (min-width: $breakpoint-large) { @content; }
+  } @else if $size == xlarge {
+    @media (min-width: $breakpoint-xlarge) { @content; }
+  } @else if $size == xxlarge {
+    @media (min-width: $breakpoint-xxlarge) { @content; }
+  }
+}
+
+// Flexbox center
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Flexbox between
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Clearfix
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Button reset
+@mixin button-reset {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+// Transition mixin
+@mixin transition($properties...) {
+  transition: $properties;
+}
+
+// Box shadow
+@mixin box-shadow($shadow) {
+  box-shadow: $shadow;
+}
+
+// Container
+@mixin container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $spacing-md;
+  padding-right: $spacing-md;
+  
+  @include breakpoint(medium) {
+    padding-left: $spacing-lg;
+    padding-right: $spacing-lg;
+  }
+  
+  @include breakpoint(large) {
+    padding-left: $spacing-xl;
+    padding-right: $spacing-xl;
+  }
+}
+
+// Aspect ratio
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  
+  &::before {
+    content: "";
+    display: block;
+    padding-top: ($height / $width) * 100%;
+  }
+  
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Truncate text
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Line clamp
+@mixin line-clamp($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// Hover effect
+@mixin hover-lift {
+  transition: transform $transition-base, box-shadow $transition-base;
+  
+  &:hover {
+    transform: translateY(-2px);
+    @include box-shadow($shadow-lg);
+  }
+}
+
+// Image cover
+@mixin image-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}

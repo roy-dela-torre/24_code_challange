@@ -1,0 +1,30 @@
+{
+  "name": "premium-shop-ecommerce",
+  "version": "1.0.0",
+  "description": "Modern e-commerce web shop built with Foundation framework and SCSS",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass scss/main.scss css/main.css --style compressed",
+    "sass:watch": "sass --watch scss/main.scss:css/main.css",
+    "sass:dev": "sass scss/main.scss css/main.css --source-map",
+    "build": "npm run sass",
+    "watch": "sass --watch scss/main.scss:css/main.css",
+    "start": "npm run sass:watch"
+  },
+  "keywords": [
+    "ecommerce",
+    "foundation",
+    "scss",
+    "responsive",
+    "webshop"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.69.5"
+  },
+  "dependencies": {
+    "foundation-sites": "^6.8.1",
+    "flickity": "^2.3.0"
+  }
+}

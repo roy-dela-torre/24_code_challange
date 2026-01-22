@@ -1,0 +1,61 @@
+// ============================================
+// Main Layout Styles
+// ============================================
+
+.main-content {
+  min-height: calc(100vh - #{$header-height} - #{$footer-height});
+}
+
+.section {
+  padding: $spacing-xxxl 0;
+  
+  &--no-padding-top {
+    padding-top: 0;
+  }
+  
+  &--no-padding-bottom {
+    padding-bottom: 0;
+  }
+  
+  &--gray-bg {
+    background-color: $color-gray-lightest;
+  }
+}
+
+.container {
+  @include container;
+}
+
+// Grid utilities
+.grid {
+  display: grid;
+  gap: $spacing-lg;
+  
+  &--cols-1 {
+    grid-template-columns: 1fr;
+  }
+  
+  &--cols-2 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    
+    @include breakpoint(medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  &--cols-3 {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    
+    @include breakpoint(large) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  &--cols-4 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    
+    @include breakpoint(xlarge) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

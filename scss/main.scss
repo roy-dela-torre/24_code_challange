@@ -1,0 +1,92 @@
+// ============================================
+// Main SCSS Entry Point
+// D1 Skincare Website
+// ============================================
+
+// Foundation Framework
+// Import Foundation CSS from CDN or local installation
+
+// Utils - Variables and Mixins (imported first)
+@import 'utils/variables';
+@import 'utils/mixins';
+
+// Base - Reset and Typography
+@import 'base/reset';
+@import 'base/typography';
+
+// Layout - Main structure
+@import 'layout/main';
+
+// Components - Current HTML Structure
+@import 'components/header-nav';
+@import 'components/d1-buttons';
+
+// Pages
+@import 'pages/index';
+
+// Legacy D1 components (keeping for future use)
+@import 'components/d1-sections';
+@import 'components/d1-products';
+@import 'components/d1-footer';
+@import 'components/carousel';
+
+// ============================================
+// Custom Utility Classes
+// ============================================
+
+.u-margin-top-sm { margin-top: $spacing-sm; }
+.u-margin-top-md { margin-top: $spacing-md; }
+.u-margin-top-lg { margin-top: $spacing-lg; }
+.u-margin-top-xl { margin-top: $spacing-xl; }
+.u-margin-top-xxl { margin-top: $spacing-xxl; }
+
+.u-margin-bottom-sm { margin-bottom: $spacing-sm; }
+.u-margin-bottom-md { margin-bottom: $spacing-md; }
+.u-margin-bottom-lg { margin-bottom: $spacing-lg; }
+.u-margin-bottom-xl { margin-bottom: $spacing-xl; }
+.u-margin-bottom-xxl { margin-bottom: $spacing-xxl; }
+
+.u-padding-top-sm { padding-top: $spacing-sm; }
+.u-padding-top-md { padding-top: $spacing-md; }
+.u-padding-top-lg { padding-top: $spacing-lg; }
+.u-padding-top-xl { padding-top: $spacing-xl; }
+
+.u-padding-bottom-sm { padding-bottom: $spacing-sm; }
+.u-padding-bottom-md { padding-bottom: $spacing-md; }
+.u-padding-bottom-lg { padding-bottom: $spacing-lg; }
+.u-padding-bottom-xl { padding-bottom: $spacing-xl; }
+
+// Visibility utilities
+.hide-for-small-only {
+  @include breakpoint(medium) {
+    display: block !important;
+  }
+  display: none !important;
+}
+
+.show-for-small-only {
+  @include breakpoint(medium) {
+    display: none !important;
+  }
+  display: block !important;
+}
+
+.hide-for-medium-only {
+  @include breakpoint(large) {
+    display: block !important;
+  }
+  @media (max-width: #{$breakpoint-medium - 1px}) {
+    display: block !important;
+  }
+  display: none !important;
+}
+
+.show-for-medium-only {
+  @include breakpoint(large) {
+    display: none !important;
+  }
+  @media (max-width: #{$breakpoint-medium - 1px}) {
+    display: none !important;
+  }
+  display: block !important;
+}
