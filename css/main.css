@@ -273,6 +273,7 @@ header nav button.cart {
   border: none;
   position: relative;
   background-color: transparent;
+  overflow: visible;
 }
 header nav button.cart svg {
   width: 30px;
