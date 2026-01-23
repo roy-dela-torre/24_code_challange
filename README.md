@@ -1,15 +1,16 @@
-# Premium Shop - E-commerce Web Application
+# D1 Skincare - 24 Hour Code Challenge
 
-A modern, responsive e-commerce web shop built with Foundation framework, SCSS, and JavaScript following enterprise-level best practices.
+A modern, responsive skincare e-commerce landing page built with Foundation framework, SCSS, and JavaScript for a 24-hour coding challenge.
 
 ## 🚀 Project Overview
 
-This project is a pixel-perfect implementation of a modern e-commerce homepage featuring:
-- Responsive design across all devices (mobile, tablet, desktop)
-- Foundation framework for robust grid system
-- Modular SCSS architecture for maintainability
-- Flickity carousel for product showcases
-- Interactive UI components with smooth animations
+This project is a pixel-perfect implementation of the D1 Skincare website featuring:
+- Fully responsive design across all devices (mobile, tablet, desktop)
+- Foundation 6.8.1 framework integration
+- Modular SCSS architecture with 7-1 pattern
+- AOS (Animate On Scroll) library for smooth scroll animations
+- Enhanced button hover effects with ripple and lift animations
+- Men's skincare product showcase
 
 ## 📋 Table of Contents
 
@@ -26,22 +27,27 @@ This project is a pixel-perfect implementation of a modern e-commerce homepage f
 ## ✨ Features
 
 - **Responsive Design**: Fully responsive layout that adapts to mobile, tablet, and desktop viewports
-- **Modern UI Components**:
-  - Sticky navigation header with cart functionality
-  - Hero section with call-to-action buttons
-  - Product cards with hover effects
-  - Category grid with image overlays
-  - Product carousel using Flickity
-  - Footer with newsletter subscription
+- **Modern UI Sections**:
+  - Hero banner with testimonial rating
+  - "A Simple Routine" introduction section
+  - "Just Day 1" - 3-step skincare routine
+  - "Daily Benefits" cards with flip animations
+  - "Get The Set" product showcase with pricing
+  - "Best-in-Class Ingredients" showcase
+  - "Three Perfect Formulas" with testimonials
+  - "What Our Fans Say" video card grid
+  - Footer with newsletter signup
 - **Interactive Elements**:
-  - Add to cart functionality with notifications
-  - Smooth scroll navigation
+  - AOS scroll animations (24+ animated elements)
+  - Enhanced button hover effects with ripple
+  - Smooth transitions and transforms
+  - Marquee scrolling text animation
   - Dynamic cart counter
-  - Hover animations and transitions
+  - Pulse animations on CTA buttons
 - **Performance Optimized**:
-  - Lazy loading support
   - Compressed CSS output
   - Debounced scroll events
+  - Single-page architecture
 
 ## 🛠 Technologies Used
 
@@ -50,7 +56,7 @@ This project is a pixel-perfect implementation of a modern e-commerce homepage f
 - **SCSS/Sass**: Modular CSS with variables, mixins, and nesting
 - **JavaScript (ES6+)**: Modern JavaScript with jQuery
 - **Foundation 6.8.1**: Responsive framework (integrated via CDN and npm)
-- **Flickity 2.3.0**: Carousel library
+- **AOS 2.3.1**: Animate On Scroll library
 
 ### Foundation Framework Integration
 - **Method 1**: CDN link in HTML (`<link>` tag in `<head>`)
@@ -58,9 +64,10 @@ This project is a pixel-perfect implementation of a modern e-commerce homepage f
 - **Provides**: Grid system, responsive utilities, flexbox helpers, visibility classes
 
 ### Additional Libraries
-- **Font Awesome 6.4.0**: Icon library
+- **AOS (Animate On Scroll)**: Scroll-triggered animations
 - **Google Fonts**: Typography (Inter, RobotoMono)
-- **jQuery 3.7.0**: DOM manipulation and Foundation compatibility
+- **jQuery 3.7.1**: DOM manipulation and Foundation compatibility
+- **Custom utility classes**: Flexbox, typography, spacing utilities
 
 ## 📁 Project Structure
 
@@ -75,18 +82,21 @@ This project is a pixel-perfect implementation of a modern e-commerce homepage f
 │   │   ├── _reset.scss          # CSS reset and base styles
 │   │   └── _typography.scss     # Typography styles
 │   ├── components/
-│   │   ├── _header.scss         # Header/navigation component
+│   │   ├── _header-nav.scss     # Header/navigation component
 │   │   ├── _footer.scss         # Footer component
-│   │   ├── _button.scss         # Button styles
-│   │   ├── _hero.scss           # Hero section
-│   │   ├── _product-card.scss   # Product card component
-│   │   ├── _carousel.scss       # Carousel component
-│   │   └── _category.scss       # Category card component
+│   │   ├── _d1-buttons.scss     # D1 button styles
+│   │   ├── _button-hover-effects.scss  # Enhanced hover effects
+│   │   ├── _d1-sections.scss    # D1 section styles
+│   │   ├── _d1-products.scss    # Product component styles
+│   │   ├── _d1-footer.scss      # D1 footer styles
+│   │   └── _carousel.scss       # Carousel/marquee component
 │   ├── layout/
 │   │   └── _main.scss           # Main layout and grid utilities
+│   ├── pages/
+│   │   └── index.scss           # Homepage specific styles
 │   ├── utils/
 │   │   ├── _variables.scss      # SCSS variables (colors, spacing, etc.)
-│   │   └── _mixins.scss         # Reusable SCSS mixins
+│   │   └── _mixins.scss         # Reusable SCSS mixins (13 mixins)
 │   └── main.scss                # Main SCSS entry point
 ├── css/
 │   ├── main.css                 # Compiled CSS (generated)
@@ -131,11 +141,12 @@ This project is a pixel-perfect implementation of a modern e-commerce homepage f
 
 1. Open `index.html` in a modern web browser (Chrome, Firefox, Safari, Edge)
 2. The website is fully functional with:
-   - Navigation links (smooth scroll to sections)
-   - Add to cart functionality
-   - Product carousel navigation
-   - Category browsing
+   - Sticky navigation header with cart
+   - Scroll-triggered AOS animations
+   - Interactive button hover effects
+   - Smooth transitions and transforms
    - Newsletter subscription form
+   - Responsive design across all breakpoints
 
 ### Development Mode
 
@@ -304,51 +315,79 @@ The JavaScript is organized into functional sections:
 
 ### Production Dependencies
 - `foundation-sites`: ^6.8.1
-- `flickity`: ^2.3.0
+- `aos`: ^2.3.1
 
 ### Development Dependencies
 - `sass`: ^1.69.5
 
+## 🎬 Animation Features
+
+### AOS Scroll Animations
+- 24+ animated elements throughout the page
+- Animation types: fade-up, fade-down, fade-left, fade-right, zoom-in, flip-left
+- Staggered delays for sequential animations
+- Configured for single-play (once: true)
+
+### Button Hover Effects
+- Ripple effect on all buttons
+- Lift animations (translateY)
+- Enhanced box shadows
+- Scale transformations
+- Pulse animations on primary CTAs
+- Color inversions
+- Rotate effects on specific buttons
+
 ## 🔍 Key Features Explained
 
-### Responsive Product Carousel
-- Uses Flickity for smooth scrolling
-- Adjusts cell width based on viewport
-- Touch-enabled for mobile devices
-- Pagination dots and prev/next buttons
+### Scroll Animations (AOS)
+- Automatic initialization on page load
+- Duration: 1000ms with ease-in-out easing
+- Offset: 100px before element enters viewport
+- 24 animated sections including cards, headers, images
 
-### Product Cards
-- Hover effects with image zoom
-- Badge system for "New", "Sale", "Hot" items
-- Add to cart with visual feedback
-- Responsive pricing display
+### Button Hover Effects
+- Global button enhancements with cubic-bezier transitions
+- "Get Started" button: Teal with scale and glow
+- "Try Today" button: Yellow with pulse animation
+- "Get The Set" button: Color inversion on hover
+- Cart button: Icon color change and badge animation
+- Video play buttons: Scale with glow effect
 
-### Category Grid
-- CSS Grid with responsive columns
-- Image overlay with gradient
-- Hover effects with image scale
-- Click handlers for navigation
+### Responsive Design
+- Breakpoints: 1200px, 991px, 767px, 575px
+- Mobile-first approach
+- Flexbox-based layouts
+- Progressive enhancement
 
 ### Header Component
-- Sticky positioning
-- Dynamic cart counter
-- Responsive navigation (desktop/mobile)
-- Smooth scroll to sections
+- Announcement bar
+- Navigation with hamburger menu
+- Cart with counter badge
+- Dynamic box-shadow on scroll
 
-## 🚧 Future Enhancements
+## 🚧 24-Hour Challenge Deliverables
 
-Potential improvements for scaling to a full enterprise application:
-- Product filtering and sorting
-- Search functionality with autocomplete
-- User authentication system
-- Shopping cart page with checkout
-- Product detail pages
-- Customer reviews and ratings
-- Multi-language support (i18n)
-- Analytics integration
-- SEO optimization
-- State management (Redux/Context)
-- Backend API integration
+Completed within the challenge timeframe:
+- ✅ Pixel-perfect design implementation
+- ✅ Foundation framework integration
+- ✅ Modular SCSS architecture (7-1 pattern)
+- ✅ Responsive design (4 breakpoints)
+- ✅ AOS scroll animations
+- ✅ Enhanced button hover effects
+- ✅ Clean, semantic HTML
+- ✅ Comprehensive documentation
+- ✅ Git version control
+
+## 🎓 Code Challenge Notes
+
+This project was built as part of a 24-hour coding challenge to demonstrate:
+- Frontend development proficiency
+- SCSS/Sass expertise
+- Responsive design implementation
+- Framework integration (Foundation)
+- Animation and interaction design
+- Code organization and best practices
+- Documentation skills
 
 ## 📝 Notes for Development
 
@@ -369,12 +408,12 @@ Potential improvements for scaling to a full enterprise application:
 
 ## 📄 License
 
-This project is created for a code challenge demonstration.
+This project is created for a 24-hour code challenge demonstration.
 
 ## 👤 Contact
 
-For questions or feedback regarding this implementation, please refer to the video walkthrough included with the submission.
+For questions or feedback regarding this implementation, please refer to the project repository.
 
 ---
 
-**Built with ❤️ using Foundation, SCSS, and modern web development best practices**
+**Built for 24-Hour Code Challenge using Foundation, SCSS, AOS animations, and modern web development best practices**
