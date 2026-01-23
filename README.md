@@ -49,12 +49,17 @@ This project is a pixel-perfect implementation of a modern e-commerce homepage f
 - **HTML5**: Semantic markup
 - **SCSS/Sass**: Modular CSS with variables, mixins, and nesting
 - **JavaScript (ES6+)**: Modern JavaScript with jQuery
-- **Foundation 6.8.1**: Responsive framework
+- **Foundation 6.8.1**: Responsive framework (integrated via CDN and npm)
 - **Flickity 2.3.0**: Carousel library
+
+### Foundation Framework Integration
+- **Method 1**: CDN link in HTML (`<link>` tag in `<head>`)
+- **Method 2**: npm package imported in SCSS (`@import` in main.scss)
+- **Provides**: Grid system, responsive utilities, flexbox helpers, visibility classes
 
 ### Additional Libraries
 - **Font Awesome 6.4.0**: Icon library
-- **Google Fonts**: Typography (Roboto, Montserrat, Open Sans)
+- **Google Fonts**: Typography (Inter, RobotoMono)
 - **jQuery 3.7.0**: DOM manipulation and Foundation compatibility
 
 ## 📁 Project Structure
@@ -206,9 +211,18 @@ The HTML follows semantic markup principles:
 - `<section>` for content sections
 - `<footer>` for footer information
 
-Foundation's grid system is integrated for responsive layouts.
+**Foundation Framework Integration**:
+- Foundation CSS loaded via CDN in HTML `<head>` section
+- Foundation utilities available (grid system, flexbox, visibility classes)
+- Custom utility classes supplement Foundation (defined in `global.css`)
+- Both approaches work together without conflicts
 
 ### SCSS Architecture
+
+**Foundation Import**: 
+- Foundation CSS imported from `node_modules` at the top of `main.scss`
+- Ensures Foundation utilities are available throughout the project
+- Custom styles cascade after Foundation base styles
 
 **Variables** (`_variables.scss`):
 - Color palette

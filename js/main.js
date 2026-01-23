@@ -10,6 +10,17 @@
     $(document).foundation();
     
     // ============================================
+    // Initialize AOS (Animate On Scroll)
+    // ============================================
+    AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false,
+        offset: 100
+    });
+    
+    // ============================================
     // Smooth Scrolling for Anchor Links
     // ============================================
     $('a[href^="#"]').on('click', function(event) {
@@ -21,25 +32,6 @@
                 scrollTop: target.offset().top - 80
             }, 800);
         }
-    });
-    
-    // ============================================
-    // Header Scroll Effect
-    // ============================================
-    let lastScroll = 0;
-    const header = $('.header');
-    
-    $(window).on('scroll', function() {
-        const currentScroll = $(this).scrollTop();
-        
-        // Add shadow on scroll
-        if (currentScroll > 50) {
-            header.css('box-shadow', '0 4px 6px rgba(0,0,0,0.1)');
-        } else {
-            header.css('box-shadow', '0 1px 3px rgba(0,0,0,0.12)');
-        }
-        
-        lastScroll = currentScroll;
     });
     
     // ============================================

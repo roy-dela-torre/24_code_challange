@@ -1,0 +1,279 @@
+// ============================================
+// Enhanced Button Hover Effects
+// D1 Skincare Website
+// ============================================
+
+// Global button enhancements
+button {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    // Ripple effect pseudo-element
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+    }
+
+    &:hover::before {
+        width: 300px;
+        height: 300px;
+    }
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+}
+
+// Header "Get Started" button
+#get_started {
+    background: rgba(0, 191, 165, 1);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 191, 165, 0.3);
+
+    &:hover {
+        background: rgba(0, 215, 185, 1);
+        box-shadow: 0 6px 20px rgba(0, 191, 165, 0.5);
+        transform: translateY(-2px) scale(1.02);
+    }
+
+    &:active {
+        transform: translateY(0) scale(0.98);
+    }
+}
+
+// Banner "Try Today" button
+.try_today {
+    background: rgba(255, 186, 0, 1);
+    border: none;
+    padding: 16px 40px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(34, 36, 48, 1);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 186, 0, 0.4);
+
+    &:hover {
+        background: rgba(255, 200, 30, 1);
+        box-shadow: 0 8px 25px rgba(255, 186, 0, 0.6);
+        transform: translateY(-3px) scale(1.05);
+        letter-spacing: 0.5px;
+    }
+
+    &:active {
+        transform: translateY(-1px) scale(1.02);
+    }
+}
+
+// Get the Set section button
+.get_the_set {
+    button {
+        background: rgba(34, 36, 48, 1);
+        color: white;
+        border: 2px solid rgba(34, 36, 48, 1);
+        padding: 18px 36px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 700;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 4px 15px rgba(34, 36, 48, 0.3);
+
+        &:hover {
+            background: rgba(255, 186, 0, 1);
+            border-color: rgba(255, 186, 0, 1);
+            color: rgba(34, 36, 48, 1);
+            box-shadow: 0 8px 30px rgba(255, 186, 0, 0.5);
+            transform: translateY(-4px) scale(1.03);
+        }
+
+        .old-price {
+            transition: all 0.3s ease;
+        }
+
+        &:hover .old-price {
+            transform: scale(1.1);
+            color: rgba(200, 50, 50, 1);
+        }
+    }
+}
+
+// Ingredients section button
+.ingredients {
+    .header_content button {
+        background: transparent;
+        color: rgba(34, 36, 48, 1);
+        border: 2px solid rgba(34, 36, 48, 1);
+        padding: 12px 28px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 700;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: rgba(34, 36, 48, 1);
+            color: white;
+            box-shadow: 0 6px 20px rgba(34, 36, 48, 0.4);
+            transform: translateY(-2px);
+            border-color: rgba(34, 36, 48, 1);
+        }
+    }
+}
+
+// Three Formulas section buttons
+.three_formulas {
+    button {
+        background: rgba(255, 186, 0, 1);
+        color: rgba(34, 36, 48, 1);
+        border: none;
+        padding: 14px 32px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 700;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(255, 186, 0, 0.3);
+
+        &:hover {
+            background: white;
+            color: rgba(34, 36, 48, 1);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
+            transform: translateY(-3px) scale(1.05);
+        }
+    }
+}
+
+// Video cards add button
+.what_fans_say {
+    .card {
+        .add_btn {
+            background: rgba(255, 186, 0, 1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(255, 186, 0, 0.4);
+
+            &:hover {
+                background: white;
+                box-shadow: 0 6px 20px rgba(255, 186, 0, 0.6);
+                transform: rotate(90deg) scale(1.2);
+            }
+        }
+
+        .play_btn {
+            transition: all 0.3s ease;
+
+            &:hover {
+                transform: scale(1.3);
+                filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+            }
+        }
+    }
+}
+
+// Footer newsletter button
+footer {
+    .newsletter_section {
+        button {
+            background: rgba(255, 186, 0, 1);
+            color: rgba(34, 36, 48, 1);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(255, 186, 0, 0.3);
+
+            &:hover {
+                background: rgba(255, 200, 30, 1);
+                box-shadow: 0 6px 20px rgba(255, 186, 0, 0.5);
+                transform: translateY(-2px) scale(1.05);
+            }
+        }
+    }
+}
+
+// Cart button hover effect
+.cart {
+    transition: all 0.3s ease;
+
+    svg {
+        transition: all 0.3s ease;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+        
+        svg {
+            fill: rgba(255, 186, 0, 1) !important;
+        }
+
+        .count {
+            transform: scale(1.2);
+            background: rgba(255, 50, 50, 1);
+        }
+    }
+}
+
+// Hamburger menu button
+header {
+    #left_menu button {
+        transition: all 0.3s ease;
+        padding: 8px;
+        border-radius: 4px;
+
+        &:hover {
+            background: rgba(255, 186, 0, 0.1);
+            transform: scale(1.1);
+        }
+    }
+}
+
+// Pulse animation for primary CTA buttons
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 186, 0, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(255, 186, 0, 0);
+    }
+}
+
+.try_today,
+.get_the_set button {
+    animation: pulse 2s infinite;
+
+    &:hover {
+        animation: none;
+    }
+}
+
+// Smooth transitions for all interactive elements
+a, button, input[type="submit"], input[type="button"] {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}

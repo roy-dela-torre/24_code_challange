@@ -24,7 +24,8 @@
     "sass": "^1.69.5"
   },
   "dependencies": {
-    "foundation-sites": "^6.8.1",
-    "flickity": "^2.3.0"
+    "aos": "^2.3.4",
+    "flickity": "^2.3.0",
+    "foundation-sites": "^6.8.1"
   }
 }

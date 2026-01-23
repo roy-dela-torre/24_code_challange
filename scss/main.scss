@@ -4,7 +4,8 @@
 // ============================================
 
 // Foundation Framework
-// Import Foundation CSS from CDN or local installation
+// Import Foundation CSS from local installation
+@import '../node_modules/foundation-sites/dist/css/foundation.min.css';
 
 // Utils - Variables and Mixins (imported first)
 @import 'utils/variables';
@@ -20,6 +21,8 @@
 // Components - Current HTML Structure
 @import 'components/header-nav';
 @import 'components/d1-buttons';
+@import 'components/button-hover-effects';
+@import 'components/footer';
 
 // Pages
 @import 'pages/index';
